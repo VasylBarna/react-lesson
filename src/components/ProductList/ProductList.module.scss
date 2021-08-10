@@ -1,0 +1,14 @@
+$color: palevioletred;
+
+.ProductList {
+  list-style: none;
+  &__Item {
+    h3 {
+      letter-spacing: 5px;
+      color: $color;
+    }
+    div {
+      color: $color;
+    }
+  }
+}
