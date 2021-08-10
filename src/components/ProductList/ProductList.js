@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styles from './ProductList.module.scss';
 // import { Button } from "./styled";
-import { ProductCard } from './components/ProductCard';
+import { ProductCard } from 'components/ProductCard';
 
 const ProductList = ({ children, price, products }) => {
   return (
