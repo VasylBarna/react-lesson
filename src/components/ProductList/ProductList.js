@@ -3,7 +3,7 @@ import styles from './ProductList.module.scss';
 // import { Button } from "./styled";
 import { ProductCard } from './components/ProductCard';
 
-export const ProductList = ({ children, price, products }) => {
+const ProductList = ({ children, price, products }) => {
   return (
     <div>
       {children}
@@ -35,3 +35,5 @@ ProductList.propTypes = {
 ProductList.defaultProps = {
   children: <h1>Product List</h1>,
 };
+
+export default ProductList;

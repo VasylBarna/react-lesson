@@ -1,6 +1,7 @@
 // import { Component } from 'react';
+import React from 'react';
 import { Fragment } from 'react';
-import { ProductList } from './components/ProductList';
+import ProductList from 'components/ProductList';
 import { products } from './api/products.json';
 
 function App() {
@@ -14,10 +15,10 @@ function App() {
           <h2>Елитная подборка кофе!!!</h2>
           <h3>Second children</h3>
         </ProductList>
-        <ProductList priceColor="tomato" products={products} price={9.99}>
+        {/* <ProductList priceColor="tomato" products={products} price={9.99}>
           <h2>Обичная подборка кофе!!!</h2>
           <h3>Second children</h3>
-        </ProductList>
+        </ProductList> */}
       </div>
       <h2>Second element</h2>
     </Fragment>
