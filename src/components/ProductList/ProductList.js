@@ -3,16 +3,19 @@ import styles from './ProductList.module.scss';
 // import { Button } from "./styled";
 import { ProductCard } from 'components/ProductCard';
 
-const ProductList = ({ children, price, products }) => {
+const ProductList = ({ children, updateBasket, BASKET, products }) => {
   return (
     <div>
       {children}
-      <h2>{price}$</h2>
       <ul className={styles.ProductList}>
         {/* <ul className={styles.ProductList}> */}
         {products.map(product => (
           <li key={product.id}>
-            <ProductCard product={product} />
+            <ProductCard
+              updateBasket={updateBasket}
+              BASKET={BASKET}
+              product={product}
+            />
           </li>
         ))}
       </ul>
@@ -22,7 +25,6 @@ const ProductList = ({ children, price, products }) => {
 
 ProductList.propTypes = {
   children: PropTypes.string,
-  price: PropTypes.number.isRequired,
   products: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
@@ -30,10 +32,11 @@ ProductList.propTypes = {
     }),
   ),
   priceColor: PropTypes.string,
+  updateBasket: PropTypes.func.isRequired,
 };
 
 ProductList.defaultProps = {
-  children: <h1>Product List</h1>,
+  children: 'Product List',
 };
 
 export default ProductList;

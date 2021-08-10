@@ -17,7 +17,7 @@ const useStyles = makeStyles({
   },
 });
 
-export const ProductCard = ({ product }) => {
+export const ProductCard = ({ product, BASKET, updateBasket }) => {
   const classes = useStyles();
   return (
     <Card className={classes.root}>
@@ -26,7 +26,12 @@ export const ProductCard = ({ product }) => {
       <div>
         Price: <b>{product.price}$</b>
       </div>
-      <Counter />
+      <Counter
+        updateBasket={updateBasket}
+        productId={product.id}
+        value={BASKET[product.id]}
+        // min={product.min}
+      />
       <Button action={() => alert('Clicked')} primary letterSpacing="9px">
         Buy
       </Button>
