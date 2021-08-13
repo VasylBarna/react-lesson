@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import React from 'react';
 import { Fragment } from 'react';
 import ProductList from 'components/ProductList';
 import { products } from 'api/products.json';
@@ -39,7 +38,7 @@ class App extends Component {
 
     return (
       <Fragment key="">
-        {/* <AuthForm /> */}
+        <AuthForm />
         <hr />
         <div className="App">
           <div style={{ padding: '30px 10px 10px' }}>

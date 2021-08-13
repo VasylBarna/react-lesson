@@ -24,7 +24,7 @@ const ProductList = ({ children, updateBasket, BASKET, products }) => {
 };
 
 ProductList.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.node,
   products: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number,
