@@ -2,8 +2,9 @@ import { Component } from 'react';
 import { Fragment } from 'react';
 import ProductList from 'components/ProductList';
 import { products } from 'api/products.json';
-import { AuthForm } from 'components/AuthForm';
-import { Lifecycle } from './components/Lifecycle';
+// import { AuthForm } from 'components/AuthForm';
+// import { Lifecycle } from './components/Lifecycle';
+import { DeliveryList } from './components/DeliveryList';
 
 const BASKET = {};
 products.forEach(product => {
@@ -39,8 +40,9 @@ class App extends Component {
 
     return (
       <Fragment key="">
-        <Lifecycle outerValue={21} />
-        <AuthForm />
+        {/* <Lifecycle outerValue={21} /> */}
+        <DeliveryList />
+        {/* <AuthForm /> */}
         <hr />
         <div className="App">
           <div style={{ padding: '30px 10px 10px' }}>
