@@ -7,8 +7,9 @@
 - useCallback
 - useMemo
 
-// prop = 1 const MyComponent = ({ prop }) => { useEffect(() => {
-console.log('effect');
+// prop = 1
+
+const MyComponent = ({ prop }) => { useEffect(() => { console.log('effect');
 
         return () => console.log('unmount');
     }, [prop])
