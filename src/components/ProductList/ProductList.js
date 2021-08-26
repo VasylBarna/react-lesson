@@ -3,7 +3,7 @@ import styles from './ProductList.module.scss';
 // import { Button } from "./styled";
 import { ProductCard } from 'components/ProductCard';
 
-const ProductList = ({ children, updateBasket, BASKET, products }) => {
+const ProductList = ({ children, updateBasket, basket, products }) => {
   return (
     <div>
       {children}
@@ -13,7 +13,7 @@ const ProductList = ({ children, updateBasket, BASKET, products }) => {
           <li key={product.id}>
             <ProductCard
               updateBasket={updateBasket}
-              BASKET={BASKET}
+              basket={basket}
               product={product}
             />
           </li>

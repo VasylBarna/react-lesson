@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
-// import { fetchDeliveryTeam } from './api';
-const API_URL = 'https://jsonplaceholder.typicode.com/users';
+import { fetchDeliveryTeam } from './api';
+// const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
 export class DeliveryList extends Component {
   state = {
@@ -20,14 +20,15 @@ export class DeliveryList extends Component {
 
     this.setState({ loading: true });
     try {
-      const response = await fetch(API_URL);
-      const deliveryTeam = await response.json();
-      //       const deliveryTeam = await fetchDeliveryTeam();
+      // const response = await fetch(API_URL);
+      // const deliveryTeam = await response.json();
+      const deliveryTeam = await fetchDeliveryTeam();
       this.setState({ deliveryTeam });
     } catch (error) {
       this.setState({ error: error.message });
+    } finally {
+      this.setState({ loading: false });
     }
-    this.setState({ loading: false });
   };
 
   //   componentDidMount() {
@@ -46,7 +47,7 @@ export class DeliveryList extends Component {
         {loading ? (
           <CircularProgress />
         ) : error ? (
-          <h2>Ooops..{error}</h2>
+          <h2>Ooops... Something went wrong. {error}</h2>
         ) : (
           <ul>
             {deliveryTeam.map(deliveryGuy => (
